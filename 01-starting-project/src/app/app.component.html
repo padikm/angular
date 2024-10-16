@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<!-- <main>
+  <div>
+    <app-user></app-user>
+  </div>
+</main> -->
+<main>
+  <ul id="users">
+    <li>
+      <app-user
+        [avatar]="user[0].avatar"
+        [name]="user[0].name"
+        [id]="user[0].id"
+        (select)="onselect($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="user[1].avatar"
+        [name]="user[1].name"
+        [id]="user[0].id"
+        (select)="onselect($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="user[2].avatar"
+        [name]="user[2].name"
+        [id]="user[0].id"
+        (select)="onselect($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="user[3].avatar"
+        [name]="user[3].name"
+        [id]="user[0].id"
+        (select)="onselect($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [avatar]="user[4].avatar"
+        [name]="user[4].name"
+        [id]="user[0].id"
+        (select)="onselect($event)"        
+      />
+    </li>
+  </ul>
+  <app-tasks [tName]="getName"> </app-tasks>
+</main>
