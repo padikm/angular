@@ -5,7 +5,6 @@
     </button>
 </div> -->
 
-
 <!-- <div>
     <button  (click)="onSelectUser()">
         <img [src] = "imagePath" [alt]="name"/>
@@ -14,8 +13,8 @@
 </div> -->
 
 <div>
-    <button  (click)="onSelect()">
-        <img [src] = "imagePath" [alt]="id"/>
-        <span>{{name}}</span>
-    </button>
+  <button (click)="onSelect()">
+    <img [src]="imagePath" [alt]="user.id" />
+    <span>{{ user.name }}</span>
+  </button>
 </div>

@@ -4,6 +4,12 @@ import { DUMMY_USERS } from '../dummy-users';
 
 import { TasksComponent } from '../tasks/tasks.component';
 
+interface User {
+  id: string
+  name: string
+  avatar: string
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -11,6 +17,8 @@ import { TasksComponent } from '../tasks/tasks.component';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
+
 export class UserComponent {
   //Singnals
   // user = DUMMY_USERS[0]
@@ -46,9 +54,9 @@ export class UserComponent {
 
   // }
 
-  @Input() name!: string
-  @Input() avatar!: string
-  @Input() id!: string
+
+  @Input() user! : User
+
 
   @Output() select = new EventEmitter() 
   // select = output<string>()
@@ -56,10 +64,10 @@ export class UserComponent {
   // name = input.required<string>()
   // id = input.required<string>()
   get imagePath() {
-    return "assets/users/" + this.avatar
+    return "assets/users/" + this.user.avatar
   }
 
   onSelect() {
-    this.select.emit(this.name)       
+    this.select.emit(this.user.name)       
   }
 }
